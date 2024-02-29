@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=REM:wght@900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: roboto;
+        }
+        header{
+            width: 100%;
+            padding: 32px 72px;
+            margin-top: 24px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+        }
+        header .logo{
+            font-size: 20px;
+            color: #f6f5f5;
+            font-weight: 900;
+        }
+
+        header .btn{
+            background-color: #1c1c1c;
+            color: white;
+            border: 1px solid transparent;
+            padding: 8px 24px;
+            border-radius: 32px;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: border 0.1s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+        }
+        header .btn:hover{
+            border: 1px solid #1c1c1c;
+            background-color: transparent;
+            color: #1c1c1c;
+            cursor: pointer;
+        }
+        #hero{
+            max-height: 100vh;
+            width: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+        .hero-banner{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .hero-banner img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            /* object-position: center top; */
+        }
+        .text--box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            position: absolute;
+            top: 88px;
+            left: 40%;
+        }
+        .hero--text{
+            width: 240px;
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: #a3a3a3;
+        }
+
+        .circle{
+            /* background-color: red; */
+            height: 800px;
+            width: 800px;
+            border-radius: 50%;
+            position: relative;
+            left: 40%;
+            top: 49vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #banner--text{
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #1c1c1c;
+        }
+        
+        @keyframes round{
+            from{
+                transform: rotate(0);
+            }
+            to{
+                transform: rotate(-360deg);
+            }
+        }
+        
+        .banner-text-box{
+            height: 100%;
+            width: 100%;
+            
+            position: absolute;
+            /* left: 50%; */
+            animation: 10s linear infinite round;
+            /* background-color: blue; */
+        }
+        .banner-text-box span{
+            position: absolute;
+            left: 50%;
+            transform-origin: 0 400px;
+
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">A-ESTATICS</div>
+        <button class="btn">Get consultation</button>
+    </header>
+   
+    <div id="hero">
+        <div class="text--box">
+            <p class="hero--text">Aestatics agency was founded in 2005 in order to simplify transactions between property owners and buyers. We support our customers at every step and in every step and in every Questions</p>
+            <p class="hero--text">Our real estate agents are licensed professionals who organize real esate transactions and act as representatives in negotiations on the acquistion of real esate.</p>
+        </div>
+        <div class="circle">
+            <div class="banner-text-box">
+                <p id="banner--text">Real Estate in copenhagen. Real Estate in copenhagen. Real Estate in copenhagen. Real Estate in copenhagen.</p>
+            </div>
+        </div>
+        <div class="hero-banner">
+        <img src="Background1.png" alt="hero>hero-banner">
+        </div>
+        
+    </div>
+    
+
+    <script>
+        const text = document.querySelector('#banner--text');
+        text.innerHTML = text.innerText.split("").map(
+            (char, i)=>
+                `<span style="transform:rotate(${i*3.35}deg)">${char}</span>`
+        ).join("");
+    </script>
+</body>
+</html>
