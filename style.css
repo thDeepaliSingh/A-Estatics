@@ -43,7 +43,7 @@ nav{
     position: fixed;
     z-index: 999;
     top: 40%;
-    right: 0%;
+    right: 3%;
 }
 #nav--container{
     display: flex;
@@ -86,7 +86,7 @@ nav{
 .hero-banner img{
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: fill;
     /* object-position: center top; */
 }
 .text--box{
@@ -171,7 +171,7 @@ nav{
     font-weight: 500;
 }
 
-section#about{
+section#about,section#catalogue{
     height: 80vh;
     width: 100%;
     background-color: #0a0a0a;
@@ -179,35 +179,22 @@ section#about{
     top: 0;
     left: 0;
 }
-section#catalogue{
-    height: 80vh;
-    width: 100%;
-    background-color: #a55050;
-    position: relative; 
-    top: 0;
-    left: 0;
-}
-section#search{
-    height: 80vh;
-    width: 100%;
-    background-color: #9e9393;
-    position: relative; 
-    top: 0;
-    left: 0;
-}
 
-#about .text{
+
+
+.text{
     color: #d2d2d2;
     padding: 88px 80px 0;
     width: 504px;
 }
 
-#about .text h1{
-    font-size: 48px;
+.text h1{
+    font-size: 40px;
     font-weight: 500;
     margin: 36px 0;
+    text-transform: uppercase;
 }
-#about .text p{
+.text p{
     font-weight: 400;
     font-size: 1.3rem;
     letter-spacing: 0.44px;
@@ -230,8 +217,43 @@ section#search{
     bottom: 0%;
     left: 24px;
 }
-#about .image--container1 img, #about .image--container2 img{
+#catalogue, section#search{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-right: 10%;
+}
+
+#catalogue .img--container{
+    height: 100vh;
+    width: 30%;
+    margin-top: 49px;
+    z-index: 100;
+}
+.img--container img{
     height: 100%;
     width: 100%;
     object-fit: fill;
+}
+
+section#search{
+    height: 80vh;
+    width: 100%;
+    background-color: #f4f4f4;
+    position: relative; 
+    top: 0;
+    left: 0;
+}
+
+#search .text{
+    color: #1c1c1c;
+    padding: 88px 80px 0;
+    width: 504px;
+}
+
+#search .img--container{
+    height: 320px;
+    width: 320px;
+    border-radius: 50%;
+    overflow: hidden;
 }
